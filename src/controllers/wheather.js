@@ -1,5 +1,5 @@
 const env = require('dotenv').config();
-const Axios = require('axios').default;
+const axios = require('axios');
 const { Op } = require('sequelize');
 const { User } = require('../database/models');
 const MSG = require('./messages');
@@ -30,17 +30,20 @@ module.exports = {
         // if token exists and still valid
         if (user.length !== 0) {
           // check wheather for said location
-          Axios.get(WEATHERSTACK_URL, {
-            access_key: env.parsed.API_KEY,
-            query: req.body.location
+          axios.get(WEATHERSTACK_URL, {
+            params: {
+              access_key: env.parsed.API_KEY,
+              query: req.body.location
+            }
           })
             .then((response) => {
               res.status(201).send({
                 erorred: false,
-                message: response
+                message: response.data
               });
             })
             .catch((error) => {
+              console.log(error);
               res.status(400).send({
                 erorred: true,
                 message: error
