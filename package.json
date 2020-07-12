@@ -4,7 +4,8 @@
   "description": "A weather API trybforge",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node index.js"
   },
   "keywords": [
     "trybforge",
