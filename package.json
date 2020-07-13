@@ -4,7 +4,7 @@
   "description": "A weather API trybforge",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "npx eslint src/",
     "start": "node index.js"
   },
   "keywords": [
