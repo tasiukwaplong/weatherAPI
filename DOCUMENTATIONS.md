@@ -46,7 +46,7 @@ On successful login, a token will be created and response:
 ```
 
 ## Accessing wheather API
-To access the weather APi, one must pass two parameters: `location` and access `token` generated when you logged in. Here's how to go about it:  
+To access the weather API, one must pass two parameters: `location` and access `token` (generated when you logged in). Here's how to go about it:  
 `REQUEST METHOD: POST`  
 ```js
 // URL: https://wheather-api-by-tk.herokuapp.com/api/wheather
